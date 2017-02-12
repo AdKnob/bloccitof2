@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% @items.each do |item| do %>
+  <%= link_to item.name, items_path %>
+<% end %>
+<div>
+  <%= link_to "New Item", new_item_path %>
+</div>
