@@ -4,13 +4,19 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new
-    @item.name = params [:item][:name]
+    @item = current_user.items.new(item_params)
     if @item.save
       flash[:notice] = "Item was successfully listed."
-       redirect_to @item
+       redirect_to current_user
      else
        flash.now[:alert] = "There was an error saving the item. Please try again."
-       render :new
+       render current_user
   end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name)
+  end
+
 end

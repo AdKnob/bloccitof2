@@ -1,6 +1,4 @@
-<% @items.each do |item| do %>
-  <%= link_to item.name, items_path %>
-<% end %>
 <div>
-  <%= link_to "New Item", new_item_path %>
+  <%= item.name %>
+  <%= link_to "New Item", 'users/form' %>
 </div>
