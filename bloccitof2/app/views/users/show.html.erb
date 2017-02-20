@@ -1,6 +1,10 @@
-<div>
-  <%= @items.each do |i| %>
-  <%= i.name %>
-  <% end %>
-  <%= link_to "List a new item", 'items/_form' %>
-</div>
+<h2>My To-do Items</h2>
+<table class="table table-striped table-hover">
+  <thead>
+    <th>Item</th>
+    <th>Time remaining</th>
+    <th></th>
+  </thead>
+  <%= render @items %>
+</table>
+  <%= render "items/form" %>

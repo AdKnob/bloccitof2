@@ -1,4 +1,5 @@
-<%= form_for @item do |i| %>
+<h2>Add a new Item</h2>
+<%= form_for Item.new do |i| %>
   <%= i.label :name %>
   <%= i.text_field :name %>
   <%= i.submit "Save" %>

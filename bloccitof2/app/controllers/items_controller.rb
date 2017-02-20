@@ -1,7 +1,4 @@
 class ItemsController < ApplicationController
-  def new
-    @item = Item.new
-  end
 
   def create
     @item = current_user.items.new(item_params)
@@ -11,6 +8,7 @@ class ItemsController < ApplicationController
      else
        flash.now[:alert] = "There was an error saving the item. Please try again."
        render current_user
+     end
   end
 
   def destroy
@@ -21,6 +19,7 @@ class ItemsController < ApplicationController
         format.js
       end
     end
+  end
 
   private
 

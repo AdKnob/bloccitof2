@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :items, only: [:create]
+  resources :items, only: [:create, :destroy]
 
   root 'users#show'
 end

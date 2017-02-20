@@ -8,10 +8,20 @@
 
 require 'faker'
 
+5.times do
+  User.create(email: Faker::Internet.email, password: "password")
+end
+
+users = User.all
+
 20.times do
   Item.create!(
-    item: Faker::Book.title
+    name: Faker::Book.title,
+    user: users.sample
     )
 end
 
 items = Item.all
+
+puts "#{users.count} users created"
+puts "#{items.count} items created"
